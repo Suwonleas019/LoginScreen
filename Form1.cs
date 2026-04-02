@@ -64,7 +64,7 @@ namespace LoginScreen
             else
             {
                 //MessageBox.Show("로그인 실패~");
-                MessageBox.Show("아이디 또는 패스워드가 잘못 입력되었습니다.", "Error", MessageBoxButtons.OK);
+                //MessageBox.Show("아이디 또는 패스워드가 잘못 입력되었습니다.", "Error", MessageBoxButtons.OK);
                 lblErrorMsg.Visible = true;
             }
         }
@@ -85,6 +85,21 @@ namespace LoginScreen
                 e.SuppressKeyPress = true; // 기본 비프음 방지
                 btnLogin.PerformClick(); // 버튼이 눌린 것처럼 만들기
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtPW.Clear();
+        }
+
+        private void btnLP_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPW.UseSystemPasswordChar = true;
+        }
+
+        private void btnLP_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPW.UseSystemPasswordChar = false;
         }
     }
 }
